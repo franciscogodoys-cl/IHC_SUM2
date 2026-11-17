@@ -1,6 +1,6 @@
 # Asistente de Registro Guiado Accesible (IHC_SUM2)
 
-Evaluación sumativa de la Unidad 2 de **Interacción Humano Computador**
+Evaluación sumativa de la Unidad 2 de **Interacción Humano Computador...**
 
 Equipo: Francisco Godoy, Carolina Vallejos y Eduardo Jaque
 Profesora: Yenny Alexandra Méndez
