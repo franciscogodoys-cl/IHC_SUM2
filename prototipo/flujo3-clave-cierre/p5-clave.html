@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>P5 Paso 4, crea tu clave | Prototipo académico IHC</title>
+  <link rel="stylesheet" href="../compartido/css/base.css">
+  <link rel="stylesheet" href="css/flujo3.css">
+</head>
+<body>
+  <main class="pantalla">
+    <!-- Volver y Escuchar los conecta App.iniciar -->
+    <div class="barra">
+      <button class="enlace-boton" type="button" data-volver>← Volver</button>
+      <button class="enlace-boton" type="button" data-boton-escuchar aria-label="Escuchar las instrucciones de esta pantalla">🔊 Escuchar</button>
+    </div>
+    <!-- App.iniciar dibuja aqui el indicador de pasos -->
+    <div data-progreso></div>
+
+    <!-- Lo valida el JS del flujo, no envia datos -->
+    <form id="form-clave">
+      <!-- Texto que lee el boton Escuchar -->
+      <div data-escuchar>
+        <h1>Crea tu clave</h1>
+        <p class="instruccion">Con tu RUT o tu celular y esta clave vas a entrar a tu cuenta. Usa una que puedas recordar, pero que no sea tu RUT ni tu fecha de nacimiento.</p>
+      </div>
+
+      <div class="campo">
+        <label for="clave">Tu clave <span class="etiqueta-tipo">(obligatorio)</span></label>
+        <!-- El boton Ver muestra u oculta la clave -->
+        <div class="clave-grupo">
+          <input id="clave" name="clave" type="password" autocomplete="off" aria-describedby="requisitos err-clave">
+          <button class="boton-ver" type="button" data-ver="clave" aria-pressed="false">👁 Ver</button>
+        </div>
+        <p class="mensaje-error" id="err-clave" role="alert"></p>
+      </div>
+
+      <!-- Cada regla se marca mientras se escribe la clave -->
+      <div class="requisitos" id="requisitos" aria-live="polite">
+        <p class="requisitos-titulo">Tu clave necesita</p>
+        <ul>
+          <li data-regla="largo">Al menos 8 letras o números</li>
+          <li data-regla="numero">Al menos un número</li>
+          <li data-regla="mayuscula">Al menos una letra mayúscula</li>
+          <li data-regla="minuscula">Al menos una letra minúscula</li>
+          <li data-regla="espacios">Sin espacios</li>
+        </ul>
+      </div>
+
+      <div class="campo">
+        <label for="clave-repetida">Escribe la clave otra vez <span class="etiqueta-tipo">(obligatorio)</span></label>
+        <div class="clave-grupo">
+          <input id="clave-repetida" name="claveRepetida" type="password" autocomplete="off" aria-describedby="err-clave-repetida">
+          <button class="boton-ver" type="button" data-ver="clave-repetida" aria-pressed="false">👁 Ver</button>
+        </div>
+        <p class="mensaje-error" id="err-clave-repetida" role="alert"></p>
+      </div>
+
+      <div class="acciones">
+        <button class="boton boton-principal" type="submit">Continuar</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../compartido/js/app.js"></script>
+  <script src="js/flujo3.js"></script>
+  <!-- Inicia la logica de esta pantalla -->
+  <script>Flujo3.pantallaClave();</script>
+</body>
+</html>

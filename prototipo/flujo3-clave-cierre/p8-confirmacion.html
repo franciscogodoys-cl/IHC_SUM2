@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>P8 Cuenta creada | Prototipo académico IHC</title>
+  <link rel="stylesheet" href="../compartido/css/base.css">
+  <link rel="stylesheet" href="css/flujo3.css">
+</head>
+<body>
+  <main class="pantalla">
+    <!-- Volver y Escuchar los conecta App.iniciar -->
+    <div class="barra">
+      <span></span>
+      <button class="enlace-boton" type="button" data-boton-escuchar aria-label="Escuchar esta pantalla">🔊 Escuchar</button>
+    </div>
+
+    <!-- Texto que lee el boton Escuchar -->
+    <div data-escuchar>
+      <!-- Los data-dato se llenan con los datos de la sesion -->
+      <div class="estado-exito" role="status">
+        <strong>¡Listo, <span data-dato="nombre"></span>! Tu cuenta quedó creada.</strong>
+      </div>
+      <p class="instruccion confirmacion-texto">Desde ahora entras a Falabella.com con tu RUT o tu celular <strong data-dato="celularCompleto"></strong> y la clave que creaste.</p>
+      <p class="instruccion" data-dato="mensajeCanal"></p>
+      <p class="instruccion" data-dato="mensajeCorreo"></p>
+
+      <div class="tarjeta">
+        <strong>Con tu cuenta puedes</strong>
+        <ul class="lista-simple">
+          <li>Ver tus boletas en línea</li>
+          <li>Seguir tus pedidos y despachos</li>
+          <li>Guardar tus direcciones para la próxima compra</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="acciones">
+      <!-- Borra los datos de prueba al salir -->
+      <a class="boton boton-principal" id="ir-a-comprar" href="../index.html">Ir a comprar</a>
+    </div>
+  </main>
+
+  <script src="../compartido/js/app.js"></script>
+  <script src="js/flujo3.js"></script>
+  <!-- Inicia la logica de esta pantalla -->
+  <script>Flujo3.pantallaConfirmacion();</script>
+</body>
+</html>
