@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>P4 Paso 3, confirma tu celular | Prototipo académico IHC</title>
+  <link rel="stylesheet" href="../compartido/css/base.css">
+  <link rel="stylesheet" href="css/flujo2.css">
+</head>
+<body>
+  <main class="pantalla">
+    <!-- Volver y Escuchar los conecta App.iniciar -->
+    <div class="barra">
+      <button class="enlace-boton" type="button" data-volver>← Volver</button>
+      <button class="enlace-boton" type="button" data-boton-escuchar aria-label="Escuchar las instrucciones de esta pantalla">🔊 Escuchar</button>
+    </div>
+    <!-- App.iniciar dibuja aqui el indicador de pasos -->
+    <div data-progreso></div>
+
+    <!-- Lo valida el JS del flujo, no envia datos -->
+    <form id="form-codigo">
+      <!-- Texto que lee el boton Escuchar -->
+      <div data-escuchar>
+        <h1>Confirma tu celular</h1>
+        <!-- El celular se completa desde la sesion -->
+        <p class="instruccion">Te enviamos un mensaje de texto con un código de 6 números al <strong id="celular-destino"></strong>. Toca el campo y usa el código que te sugiere el teléfono.</p>
+      </div>
+
+      <div class="campo">
+        <label for="codigo">Código de 6 números <span class="etiqueta-tipo">(obligatorio)</span></label>
+        <span class="ejemplo" id="ej-codigo">Por ejemplo: 482913</span>
+        <input id="codigo" name="codigo" inputmode="numeric" autocomplete="one-time-code" maxlength="6"
+               class="input-codigo" aria-describedby="ej-codigo err-codigo">
+        <p class="mensaje-error" id="err-codigo" role="alert"></p>
+      </div>
+
+      <!-- Sugerencia simulada del teclado, aparece al tocar el campo -->
+      <div class="sugerencia-teclado" id="sugerencia" hidden aria-live="polite">
+        <p class="sugerencia-etiqueta">Simulación del teclado del teléfono</p>
+        <button type="button" class="sugerencia-chip" id="usar-codigo">
+          <span>Desde Mensajes</span>
+          <strong id="codigo-sugerido"></strong>
+          <span class="sugerencia-accion">Usar</span>
+        </button>
+      </div>
+
+      <details class="ayuda">
+        <summary>¿No ves el código sobre el teclado?</summary>
+        <p>Algunos teléfonos no lo muestran solos. Abre tus mensajes de texto (SMS), busca el último mensaje con 6 números y escríbelos aquí. Si estás en la tienda, también puedes pedirle ayuda al asesor.</p>
+      </details>
+
+      <p class="reenviar" id="reenviar-espera">Si no te llega, podrás pedir otro código en <span id="segundos">60</span> segundos.</p>
+      <!-- Aparece al terminar la cuenta regresiva -->
+      <button class="enlace-boton" type="button" id="reenviar" hidden>¿No te llegó? Reenviar código</button>
+      <a class="enlace-boton" href="p3-contacto.html">Cambiar mi celular</a>
+
+      <div class="acciones">
+        <button class="boton boton-principal" type="submit">Confirmar celular</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../compartido/js/app.js"></script>
+  <script src="../compartido/js/validaciones.js"></script>
+  <script src="js/flujo2.js"></script>
+  <!-- Inicia la logica de esta pantalla -->
+  <script>Flujo2.pantallaVerificarCelular();</script>
+</body>
+</html>
