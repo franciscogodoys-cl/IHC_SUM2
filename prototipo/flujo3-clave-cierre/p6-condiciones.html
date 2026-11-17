@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>P6 Paso 5, acepta las condiciones | Prototipo académico IHC</title>
+  <link rel="stylesheet" href="../compartido/css/base.css">
+  <link rel="stylesheet" href="css/flujo3.css">
+</head>
+<body>
+  <main class="pantalla">
+    <!-- Volver y Escuchar los conecta App.iniciar -->
+    <div class="barra">
+      <button class="enlace-boton" type="button" data-volver>← Volver</button>
+      <button class="enlace-boton" type="button" data-boton-escuchar aria-label="Escuchar las instrucciones de esta pantalla">🔊 Escuchar</button>
+    </div>
+    <!-- App.iniciar dibuja aqui el indicador de pasos -->
+    <div data-progreso></div>
+
+    <!-- Lo valida el JS del flujo, no envia datos -->
+    <form id="form-condiciones">
+      <!-- Texto que lee el boton Escuchar -->
+      <div data-escuchar>
+        <h1>Acepta las condiciones</h1>
+        <p class="instruccion">Solo la primera casilla es necesaria para crear tu cuenta. La segunda es opcional.</p>
+      </div>
+
+      <!-- Se muestra si falta aceptar las condiciones -->
+      <div class="alerta-error" id="error-condiciones" role="alert" hidden>
+        Para crear tu cuenta necesitamos que aceptes las condiciones de uso.
+      </div>
+
+      <div class="casilla obligatoria">
+        <input type="checkbox" id="acepta-condiciones" name="aceptaCondiciones">
+        <label for="acepta-condiciones">Acepto las condiciones de uso <span class="etiqueta-tipo">(obligatorio)</span></label>
+      </div>
+      <details class="ayuda">
+        <summary>Leer el resumen de las condiciones</summary>
+        <p>Tu cuenta es personal. Usaremos tus datos para tus compras, boletas y despachos, y podrás pedir que los borremos cuando quieras. Las condiciones completas estarían disponibles en un enlace aparte.</p>
+      </details>
+
+      <div class="casilla">
+        <input type="checkbox" id="acepta-ofertas" name="aceptaOfertas">
+        <label for="acepta-ofertas">Quiero recibir ofertas por el mismo medio que elegí para mis boletas <span class="etiqueta-tipo">(opcional)</span></label>
+      </div>
+
+      <div class="acciones">
+        <button class="boton boton-principal" type="submit">Continuar</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="../compartido/js/app.js"></script>
+  <script src="js/flujo3.js"></script>
+  <!-- Inicia la logica de esta pantalla -->
+  <script>Flujo3.pantallaCondiciones();</script>
+</body>
+</html>

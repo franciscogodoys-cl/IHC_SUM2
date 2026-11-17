@@ -1,0 +1,62 @@
+/* Flujo 3, clave, condiciones, revision y confirmacion */
+
+.clave-grupo { display: flex; gap: 8px; }
+.clave-grupo input { flex: 1; }
+.boton-ver {
+  min-width: 96px;
+  min-height: 52px;
+  border: 2px solid var(--accion);
+  border-radius: var(--radio);
+  background: #fff;
+  color: var(--accion);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.requisitos {
+  background: var(--fondo-suave);
+  border-radius: var(--radio);
+  padding: 12px 16px;
+  margin: -8px 0 22px;
+}
+.requisitos-titulo { font-weight: 700; margin: 0 0 6px; }
+.requisitos ul { list-style: none; padding: 0; margin: 0; }
+.requisitos li { padding: 4px 0 4px 30px; position: relative; color: var(--texto-suave); }
+.requisitos li::before {
+  content: "○";
+  position: absolute;
+  left: 4px;
+  font-weight: 700;
+}
+.requisitos li.cumple { color: var(--exito); font-weight: 700; }
+.requisitos li.cumple::before { content: "✓"; }
+.requisitos li.cumple::after { content: " (listo)"; font-weight: 400; }
+
+.casilla {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border: 2px solid var(--borde);
+  border-radius: var(--radio);
+  margin-top: 14px;
+}
+.casilla.obligatoria { border-color: var(--accion); }
+.casilla input { width: 28px; height: 28px; flex: none; margin: 2px 0 0; accent-color: var(--accion); }
+.casilla label { font-weight: 700; cursor: pointer; }
+
+.resumen {
+  border: 2px solid #D5DCE6;
+  border-radius: var(--radio);
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+.resumen-cabecera { display: flex; justify-content: space-between; align-items: center; }
+.resumen h2 { font-size: 1rem; margin: 0; }
+.resumen dl { margin: 6px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+.resumen dt { color: var(--texto-suave); }
+.resumen dd { margin: 0; font-weight: 700; word-break: break-word; }
+.resumen p { margin: 6px 0 0; }
+
+.confirmacion-texto { margin-top: 16px; }

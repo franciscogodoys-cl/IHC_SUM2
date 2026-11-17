@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>P7 Revisa tus datos | Prototipo académico IHC</title>
+  <link rel="stylesheet" href="../compartido/css/base.css">
+  <link rel="stylesheet" href="css/flujo3.css">
+</head>
+<body>
+  <main class="pantalla">
+    <!-- Volver y Escuchar los conecta App.iniciar -->
+    <div class="barra">
+      <button class="enlace-boton" type="button" data-volver>← Volver</button>
+      <button class="enlace-boton" type="button" data-boton-escuchar aria-label="Escuchar las instrucciones de esta pantalla">🔊 Escuchar</button>
+    </div>
+    <p class="progreso-texto">Último paso: revisión</p>
+
+    <!-- Texto que lee el boton Escuchar -->
+    <div data-escuchar>
+      <h1>Revisa tus datos</h1>
+      <p class="instruccion">Si algo está mal, toca "Editar". Nada queda guardado hasta que toques "Crear mi cuenta".</p>
+    </div>
+
+    <!-- Los data-dato se llenan con los datos de la sesion -->
+    <section class="resumen" aria-labelledby="r-datos">
+      <div class="resumen-cabecera">
+        <h2 id="r-datos">Tus datos</h2>
+        <a class="enlace-boton" href="../flujo1-inicio-identificacion/p2-datos-personales.html">Editar</a>
+      </div>
+      <dl>
+        <dt>RUT</dt><dd data-dato="rut"></dd>
+        <dt>Nombre</dt><dd data-dato="nombreCompleto"></dd>
+      </dl>
+    </section>
+
+    <section class="resumen" aria-labelledby="r-contacto">
+      <div class="resumen-cabecera">
+        <h2 id="r-contacto">Contacto</h2>
+        <a class="enlace-boton" href="../flujo2-contacto-verificacion/p3-contacto.html">Editar</a>
+      </div>
+      <dl>
+        <dt>Celular</dt><dd data-dato="celularCompleto"></dd>
+        <dt>Correo</dt><dd data-dato="correoTexto"></dd>
+        <dt>Boletas y avisos</dt><dd data-dato="canalTexto"></dd>
+      </dl>
+    </section>
+
+    <section class="resumen" aria-labelledby="r-clave">
+      <div class="resumen-cabecera">
+        <h2 id="r-clave">Clave</h2>
+        <a class="enlace-boton" href="p5-clave.html">Editar</a>
+      </div>
+      <p>Creada. No la mostramos para cuidar tu seguridad.</p>
+    </section>
+
+    <section class="resumen" aria-labelledby="r-condiciones">
+      <div class="resumen-cabecera">
+        <h2 id="r-condiciones">Condiciones</h2>
+        <a class="enlace-boton" href="p6-condiciones.html">Editar</a>
+      </div>
+      <dl>
+        <dt>Condiciones de uso</dt><dd>Aceptadas</dd>
+        <dt>Ofertas</dt><dd data-dato="ofertas"></dd>
+      </dl>
+    </section>
+
+    <div class="acciones">
+      <!-- Marca la cuenta como creada y va a P8 -->
+      <button class="boton boton-principal" type="button" id="crear-cuenta">Crear mi cuenta</button>
+    </div>
+  </main>
+
+  <script src="../compartido/js/app.js"></script>
+  <script src="js/flujo3.js"></script>
+  <!-- Inicia la logica de esta pantalla -->
+  <script>Flujo3.pantallaRevision();</script>
+</body>
+</html>
